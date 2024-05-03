@@ -6,7 +6,7 @@ const NavBlock = () => {
       { icon: "", title: "Jualan di Itemku" },
    ];
    return (
-      <div className="hidden bg-main-lightgrey w-full h-8 lg:flex justify-end font-roboto">
+      <div className="hidden bg-[#eaf2fc] w-full h-8 lg:flex justify-end font-roboto">
          <div className="flex gap-8 items-center px-[8rem] py-[0.25rem] mx-[3.5rem]">
             {itemsNavBlock?.map(({ icon, title }, idx) => (
                <a

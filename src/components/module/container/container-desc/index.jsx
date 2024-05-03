@@ -13,12 +13,12 @@ const Description = ({ title, description, idx }) => {
          <div
             className={`w-full ${
                !open
-                  ? "max-h-[120px] overflow-hidden transition-all"
-                  : "max-h-[440px] transition-all"
+                  ? "max-h-[120px] lg:max-h-[95px] overflow-hidden transition-all"
+                  : "max-h-[440px]  transition-all"
             }`}>
-            <h1>{title}</h1>
+            <h1 className="font-semibold lg:mb-3">{title}</h1>
             {description?.map((item, idx) => (
-               <p className="mt-3" key={idx}>
+               <p className="mt-3 lg:mt-0 lg:text-xs" key={idx}>
                   {item}
                </p>
             ))}
@@ -49,7 +49,7 @@ const ContainerDesciptions = () => {
          height: "450px",
       },
       {
-         title: "Cara Trading Top Up Diamond Mobile Legends",
+         title: "Deskripsi Produk",
          description: [
             "KEVIN STORE",
             "Hii MLers,",
@@ -66,8 +66,8 @@ const ContainerDesciptions = () => {
 
    return (
       <div className="flex flex-col gap-4 mt-14">
-         <div className="border border-main-blue rounded-md bg-main-blue/20 px-2 py-1">
-            <p>
+         <div className="border border-main-blue rounded-md bg-main-blue/10 px-2 py-1 lg:py-2 lg:px-2">
+            <p className="pr-10 py-1 lg:text-sm">
                Jika tidak menerima produk dalam 10 menit, kamu dapat langsung
                mengajukan pengembalian dana.
             </p>

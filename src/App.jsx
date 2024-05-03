@@ -1,12 +1,12 @@
-import Container from "./components/module/container";
 import Navbar from "./components/module/navbar";
+import DetailProductPage from "./pages/detail-product";
 
 function App() {
-   return (
-      <>
-         <Navbar />
-         <Container />
-      </>
-   );
+  return (
+    <>
+      <Navbar />
+      <DetailProductPage />
+    </>
+  );
 }
 export default App;
