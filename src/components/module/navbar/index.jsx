@@ -3,7 +3,7 @@ import NavContainer from "./nav-container";
 
 const Navbar = () => {
    return (
-      <header className="fixed">
+      <header className="fixed w-full">
          <NavBlock />
          <NavContainer />
       </header>
