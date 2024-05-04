@@ -3,9 +3,11 @@ import "../container-store/index.css";
 import SlickSlider from "../slick-slider";
 import tenMinute from "../../../../assets/detail-product/10menit-p.svg";
 import { useEffect, useState } from "react";
+import { SampleNextArrow, SamplePrevArrow } from "../../../base/button-arrow";
 
 const ContainerFooter = ({ title, desc, items }) => {
   const [slideShow, setSlideShow] = useState(3);
+  const [isHover, setIsHover] = useState(false);
   const settings = {
     dots: false,
     infinite: false,
@@ -13,6 +15,8 @@ const ContainerFooter = ({ title, desc, items }) => {
     speed: 500,
     slidesToShow: slideShow,
     slidesToScroll: 1,
+    nextArrow: <SampleNextArrow isHover={isHover} />,
+    prevArrow: <SamplePrevArrow isHover={isHover} />,
   };
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 1200px)");
@@ -39,7 +43,11 @@ const ContainerFooter = ({ title, desc, items }) => {
         <p className="text-blue-500">Lihat Semua</p>
       </div>
       <p>{desc}</p>
-      <div className="my-6">
+      <div
+        className="my-6"
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
         <SlickSlider settings={settings}>
           {items?.map(({ img, title, price, sold }, idx) => (
             <div key={idx} className="testimoni">
