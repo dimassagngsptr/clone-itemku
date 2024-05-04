@@ -2,10 +2,11 @@ import imgToko from "../../../../assets/detail-product/toko-img.webp";
 import tierToko from "../../../../assets/detail-product/tier-toko.svg";
 import SlickSlider from "../slick-slider";
 import "./index.css";
+import { useEffect, useState } from "react";
 
-const Slider = ({ title, children }) => {
+const Slider = ({ title, children, border }) => {
   return (
-    <div className="mt-3 border-b border-gray-300 pb-4">
+    <div className={`mt-3 ${border && "border-b border-gray-300"} pb-4`}>
       <div className="flex justify-between my-2 pr-3">
         {title}
         <p className="text-blue-500">Lihat Semua</p>
@@ -16,12 +17,13 @@ const Slider = ({ title, children }) => {
 };
 
 const ContainerStore = () => {
+  const [slideShow, setSlideShow] = useState(1);
   const settings = {
     dots: false,
     infinite: false,
     variableWidth: false,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: slideShow,
     slidesToScroll: 1,
   };
   const products = [
@@ -85,6 +87,24 @@ const ContainerStore = () => {
       ],
     },
   ];
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1200px)");
+    const tablet = window.matchMedia("(min-width: 800px)");
+    const handleResize = () => {
+      if (desktop.matches === true) {
+        setSlideShow(4);
+      } else if (tablet.matches === true) {
+        setSlideShow(3);
+      } else {
+        setSlideShow(2);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [slideShow]);
   return (
     <div>
       <div className="border-t border-b border-gray-300 py-5 font-exo">
@@ -94,7 +114,7 @@ const ContainerStore = () => {
           <div className="flex w-full flex-col">
             <div className="flex items-center">
               <img src={tierToko} alt="" className="max-w-6 max-h-6" />
-              <p className="mx-2">Kevin Store 4.8</p>
+              <p className="mx-2 lg:text-sm">Kevin Store 4.8</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -107,30 +127,32 @@ const ContainerStore = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <p className="mx-1">4.8/5.0</p>
+              <p className="mx-1 lg:text-sm">4.8/5.0</p>
             </div>
-            <p>Aktif 21 Menit yang lalu</p>
+            <p className="lg:text-xs">Aktif 21 Menit yang lalu</p>
           </div>
         </div>
       </div>
       <Slider
         title={<p className="font-semibold">Denom lainnya di toko ini</p>}
+        border={true}
       >
         <SlickSlider settings={settings}>
           {products?.map(({ product_name, stock, price }, idx) => (
             <div className="testimoni" key={idx}>
-              <div className="border border-gray-300 w-[300px] h-[120px] mx-2 py-3 px-1 font-exo">
-                <p>{product_name}</p>
-                <span className="border-2 border-black rounded-lg px-2  text-green-500 my-2 inline-block">
+              <div className="border border-gray-300 w-[300px] h-[120px] mx-2 py-3 px-1 font-exo lg:h-[100px]">
+                <p className="lg:text-sm">{product_name}</p>
+                <span className="border-2 border-black rounded-lg px-2 text-green-500 my-2 inline-block lg:text-sm">
                   Stok {stock}
                 </span>
-                <p>{price}</p>
+                <p className="lg:text-sm">{price}</p>
               </div>
             </div>
           ))}
         </SlickSlider>
       </Slider>
       <Slider
+        border={false}
         title={
           <div className="flex gap-2 mt-2">
             <p>Ulasan Terakhir 4.9/5</p>
@@ -152,7 +174,7 @@ const ContainerStore = () => {
         <SlickSlider settings={settings}>
           {ulasan?.map(({ name, stars, reviews, time }, idx) => (
             <div className="testimoni" key={idx}>
-              <div className="w-[300px] mx-2 py-3 px-2 font-exo">
+              <div className="w-[300px] border border-gray-300 rounded-md mx-2 py-3 px-2 font-exo">
                 <div className="flex justify-between">
                   <p>{name}</p>
                   <small>{time}</small>
@@ -177,7 +199,7 @@ const ContainerStore = () => {
                 {reviews?.map((item, idx) => (
                   <span
                     key={idx}
-                    className="border rounded-lg inline-block text-sm py-1"
+                    className="border rounded-lg inline-block text-sm py-1 lg:text-xs"
                   >
                     {item}
                   </span>

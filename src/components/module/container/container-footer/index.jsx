@@ -2,19 +2,38 @@ import Card from "../../../base/Card";
 import "../container-store/index.css";
 import SlickSlider from "../slick-slider";
 import tenMinute from "../../../../assets/detail-product/10menit-p.svg";
+import { useEffect, useState } from "react";
 
 const ContainerFooter = ({ title, desc, items }) => {
+  const [slideShow, setSlideShow] = useState(3);
   const settings = {
     dots: false,
     infinite: false,
     variableWidth: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: slideShow,
     slidesToScroll: 1,
   };
- 
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1200px)");
+    const tablet = window.matchMedia("(min-width: 800px)");
+    const handleResize = () => {
+      if (desktop.matches === true) {
+        setSlideShow(6);
+      } else if (tablet.matches === true) {
+        setSlideShow(4);
+      } else {
+        setSlideShow(3);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [slideShow]);
   return (
-    <div className="mt-16">
+    <div className="mt-16 lg:px-[8%]">
       <div className="flex justify-between mb-2">
         <p className="font-semibold text-lg">{title}</p>
         <p className="text-blue-500">Lihat Semua</p>

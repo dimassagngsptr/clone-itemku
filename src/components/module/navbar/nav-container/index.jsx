@@ -142,7 +142,7 @@ const NavContainer = () => {
           <div key={path}>{icons}</div>
         ))}
       </div>
-      <div className="flex gap-8 h-[40px] items-center">
+      <div className="hidden lg:flex gap-8 h-[40px] items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

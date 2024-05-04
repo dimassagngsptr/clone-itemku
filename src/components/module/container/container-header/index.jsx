@@ -2,9 +2,11 @@ import containerImg from "../../../../assets/detail-product/poster-main-web.webp
 import tenMinute from "../../../../assets/detail-product/10menit-p.svg";
 import ContainerDetail from "../container-detail";
 import ContainerDesciptions from "../container-desc";
+import ContainerStore from "../container-store";
+import OrderInformation from "../order-information";
 const ContainerHeader = () => {
   return (
-    <div className="block lg:relative lg:h-[1000px]">
+    <div className="block lg:relative lg:h-[1300px]">
       <p className="hidden lg:block lg:absolute -top-6 text-blue-500 text-xs px-[8%]">
         {"Beranda > Kategori > Mobile Legends > Top Up >"}{" "}
         <span className="text-black">986 Diamonds</span>
@@ -84,12 +86,11 @@ const ContainerHeader = () => {
             </div>
           </div>
         </div>
-        <div className="relative w-[300px] h-[1000px]">
-          <div className="sticky top-10 border border-black w-[300px] h-[400px]"></div>
-        </div>
+       <OrderInformation/>
       </div>
-      <div className="hidden lg:block lg:absolute w-[680px] top-1/4 left-[8%]">
+      <div className="hidden lg:block lg:absolute w-[680px] top-[280px] left-[8%]">
         <ContainerDesciptions />
+        <ContainerStore />
       </div>
     </div>
   );
