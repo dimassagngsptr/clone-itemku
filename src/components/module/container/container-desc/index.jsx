@@ -8,7 +8,6 @@ const Description = ({ title, description }) => {
     }
     setOpen(true);
   };
-  console.log(open);
   return (
     <div>
       <div

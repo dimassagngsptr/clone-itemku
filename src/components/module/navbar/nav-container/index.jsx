@@ -130,16 +130,16 @@ const NavContainer = () => {
           </div>
         </div>
         <div className="hidden lg:flex gap-3 text-[12px] text-main-fontlightgrey ml-24">
-          {recomendations?.map(({ title, keywords }) => (
-            <p className="bg-gray-100 px-1 rounded-md" key={keywords}>
+          {recomendations?.map(({ title, keywords }, idx) => (
+            <p className="bg-gray-100 px-1 rounded-md" key={idx}>
               {title}
             </p>
           ))}
         </div>
       </div>
       <div className="flex gap-3 h-[40px] items-center lg:hidden">
-        {NAV_RIGHT?.map(({ path, icons }) => (
-          <div key={path}>{icons}</div>
+        {NAV_RIGHT?.map(({ path, icons }, idx) => (
+          <div key={idx}>{icons}</div>
         ))}
       </div>
       <div className="hidden lg:flex gap-8 h-[40px] items-center">
