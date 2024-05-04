@@ -13,8 +13,8 @@ const Description = ({ title, description }) => {
       <div
         className={`w-full ${
           !open
-            ? "h-10 lg:max-h-[95px] overflow-hidden transition-all"
-            : "max-h-[480px]  transition-all"
+            ? "max-h-[120px] lg:max-h-[70px] overflow-hidden transition-all"
+            : "max-h-[480px] transition-all"
         }`}
       >
         <h1 className="font-semibold lg:mb-3">{title}</h1>
@@ -25,7 +25,7 @@ const Description = ({ title, description }) => {
         ))}
       </div>
       <div className="bg-white flex justify-center">
-        <button onClick={handleOpen} className="text-blue-500 py-5">
+        <button onClick={handleOpen} className="text-blue-500 py-5 font-semibold">
           Tampilkan lebih {open ? "sedikit" : "banyak"}
         </button>
       </div>
