@@ -33,7 +33,7 @@ const ContainerFooter = ({ title, desc, items }) => {
     };
   }, [slideShow]);
   return (
-    <div className="mt-16 lg:px-[8%]">
+    <div className="mt-16 lg:px-[18%]">
       <div className="flex justify-between mb-2">
         <p className="font-semibold text-lg">{title}</p>
         <p className="text-blue-500">Lihat Semua</p>

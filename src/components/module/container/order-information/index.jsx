@@ -10,7 +10,7 @@ const OrderInformation = () => {
   };
   return (
     <div className="hidden lg:block lg:relative w-[300px] h-[1300px]">
-      <div className="sticky top-10 border border-gray-300 rounded-md w-[300px] pb-4 px-2 py-1">
+      <div className="sticky top-[150px] border border-gray-300 rounded-md w-[300px] pb-4 px-2 py-1">
         <p className="font-semibold">Informasi Pesanan</p>
         <div className="flex w-full gap-10 mt-3">
           <div className="relative">

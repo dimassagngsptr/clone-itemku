@@ -78,7 +78,7 @@ const NavContainer = () => {
     };
   }, [fullLogo]);
   return (
-    <nav className="bg-white w-full flex justify-between border-b border-main-darkgray items-start px-2 py-4 lg:px-[8rem] lg:py-4 lg:border-none">
+    <nav className="bg-white w-full flex justify-between border-b border-main-darkgray items-start px-2 py-4 lg:px-[18%] lg:py-4 lg:border-none">
       <img
         className="w-10 h-10 lg:w-[100px] lg:h-[30px]"
         src={

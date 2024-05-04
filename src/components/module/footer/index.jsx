@@ -63,7 +63,7 @@ const Footer = () => {
       <div className="fixed left-0 right-0 bottom-5 h-[35px] flex items-center justify-center rounded-md w-[90%] mx-auto bg-orange-600 text-white text-center lg:hidden">
         <button className="font-semibold">Beli</button>
       </div>
-      <div className="hidden lg:px-[8%] lg:py-[3%] lg:flex gap-2 justify-between">
+      <div className="hidden lg:px-[18%] lg:py-[3%] lg:flex gap-2 justify-between lg:-mt-20">
         <div className="grid grid-cols-2 gap-x-12 gap-y-2 ">
           {linkFooter?.map(({ title, list }, idx) => (
             <div key={idx}>

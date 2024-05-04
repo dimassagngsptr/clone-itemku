@@ -13,7 +13,7 @@ const Description = ({ title, description }) => {
       <div
         className={`w-full ${
           !open
-            ? "max-h-[120px] lg:max-h-[95px] overflow-hidden transition-all"
+            ? "h-10 lg:max-h-[95px] overflow-hidden transition-all"
             : "max-h-[480px]  transition-all"
         }`}
       >

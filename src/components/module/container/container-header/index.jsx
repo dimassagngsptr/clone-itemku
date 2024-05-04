@@ -7,17 +7,17 @@ import OrderInformation from "../order-information";
 const ContainerHeader = () => {
   return (
     <div className="block lg:relative lg:h-[1300px]">
-      <p className="hidden lg:block lg:absolute -top-6 text-blue-500 text-xs px-[8%]">
+      <p className="hidden lg:block lg:absolute -top-6 text-blue-500 text-xs px-[18%]">
         {"Beranda > Kategori > Mobile Legends > Top Up >"}{" "}
         <span className="text-black">986 Diamonds</span>
       </p>
-      <div className="h-[500px] lg:flex lg:px-[8%] gap-5">
-        <div>
+      <div className="h-[500px] lg:flex lg:px-[18%] gap-5">
+        <div className="w-[500px]">
           <img
             src={containerImg}
             alt=""
             loading="lazy"
-            className="rounded-md object-cover lg:w-[350px] lg:mt-5 lg:h-[180px]"
+            className="rounded-md object-cover lg:w-full lg:mt-5 lg:h-[180px]"
           />
           <img
             src={containerImg}
@@ -88,7 +88,7 @@ const ContainerHeader = () => {
         </div>
        <OrderInformation/>
       </div>
-      <div className="hidden lg:block lg:absolute w-[680px] top-[280px] left-[8%]">
+      <div className="hidden lg:block lg:absolute w-[600px] top-[280px] left-[18%]">
         <ContainerDesciptions />
         <ContainerStore />
       </div>
